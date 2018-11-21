@@ -2,8 +2,8 @@
 #include <pthread.h>
 #include <unistd.h>
 
-#include "threadpool.h"
 #include "threads.h"
+#include "threadpool.h"
 
 //#define DEBUG
 
@@ -15,7 +15,7 @@
   #define DEBI(...)
 #endif
 
-const int TASK_QUEUE_MAX = 1000;
+const int TASK_QUEUE_MAX = 2000;
 
 
 struct task_data {

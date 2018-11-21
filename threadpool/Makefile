@@ -5,13 +5,14 @@
 DEPS = threads.h threadpool.h
 
 %.o: %.c $(DEPS)
-	gcc -c -o $@ $<
+	gcc -c -pthread -o $@ $<
 
 
-OBJ_TT = threadpool.o test_threadpool.o
+OBJ_TT =  threadpool.o test_threadpool.o
 test_threadpool: $(OBJ_TT)
-	gcc -o $@ $^
+	gcc -pthread -o $@ $^
 
 clean:
 	rm -rf ./test_threadpool
 	rm -rf ./*.o
+	rm -rf out
