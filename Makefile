@@ -5,13 +5,13 @@
 
 CC = gcc -pthread -std=gnu99 -ggdb
 
-DEPS = threadpool/threadpool.h threadpool/threads.h utils.h string_util.h
+DEPS = threadpool.h threads.h utils.h string_util.h
 
 %.o: %.c $(DEPS)
 	$(CC) -c -o $@ $<
 
 
-OBJ_S = server.o threadpool/threadpool.o
+OBJ_S = server.o threadpool.o
 server: $(OBJ_S)
 	$(CC) -o $@ $^
 
